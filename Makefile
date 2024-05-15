@@ -7,6 +7,8 @@
 
 NAME = 
 
+CC ?= gcc
+
 NAME_TEST = unit_tests
 
 CFLAGS += -Wall -Wextra
@@ -17,6 +19,8 @@ SRC =
 
 SRC_MAIN = src/main.c 	\
 		   $(SRC)
+
+RM ?= rm -rf
 
 SRC_TEST =
 
@@ -42,7 +46,7 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-debug: CFLAGS += -ggdb3
+debug: CFLAGS += -ggdb
 debug: all
 
 re: fclean
